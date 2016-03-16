@@ -60,6 +60,9 @@ function generator(node, prepend) {
  *  The message string is parsed as markdown and written to the end of the 
  *  document unless `prepend` is given.
  *
+ *  The document node itself is omitted; it's content nodes are written to 
+ *  the stream.
+ *
  *  @function gen
  *  @param {Object} [opts] processing options.
  *  @param {Function} [cb] callback function.

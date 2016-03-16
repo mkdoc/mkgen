@@ -38,6 +38,9 @@ Append or prepend a message string.
 The message string is parsed as markdown and written to the end of the
 document unless `prepend` is given.
 
+The document node itself is omitted; it's content nodes are written to
+the stream.
+
 Returns an output stream.
 
 * `opts` Object processing options.
