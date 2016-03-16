@@ -4,9 +4,11 @@
 [![npm version](http://img.shields.io/npm/v/mkgen.svg?v=3)](https://npmjs.org/package/mkgen)
 [![Coverage Status](https://coveralls.io/repos/mkdoc/mkgen/badge.svg?branch=master&service=github&v=3)](https://coveralls.io/github/mkdoc/mkgen?branch=master)
 
-> Append or prepend a message to a stream
+> Append or prepend a message
 
-By default appends a generator message to a stream, use the `message` option to change the message.
+By default appends a message to a stream, use the `message` option to change the message; to prepend set the `prepend` option.
+
+When no message is given the default generator message is used.
 
 ## Install
 

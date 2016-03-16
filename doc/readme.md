@@ -2,7 +2,7 @@
 
 <? @include readme/badges.md ?>
 
-> Append or prepend a message to a stream
+> Append or prepend a message
 
 <? @include {=readme} introduction.md install.md ?>
 
