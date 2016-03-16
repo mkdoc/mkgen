@@ -31,10 +31,10 @@ mkgen(); // read from process.stdin, write to process.stdout
 gen([opts][, cb])
 ```
 
-Append or prepend a generator message string.
+Append or prepend a message string.
 
 The message string is parsed as markdown and written to the end of the
-stream unless `prepend` is given.
+document unless `prepend` is given.
 
 Returns an output stream.
 
