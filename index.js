@@ -59,8 +59,8 @@ function generator(node, prepend) {
  *  @param {Object} [opts] processing options.
  *  @param {Function} [cb] callback function.
  *
- *  @option {Readable=process.stdin} [input] input stream.
- *  @option {Writable=process.stdout} [output] output stream.
+ *  @option {Readable} [input] input stream.
+ *  @option {Writable} [output] output stream.
  *  @option {String} [message] generator message.
  *  @option {Boolean} [prepend] prepend message to the stream.
  *
@@ -70,15 +70,17 @@ function gen(opts, cb) {
 
   /* istanbul ignore next: always pass options in test specs */
   opts = opts || {};
-  /* istanbul ignore next: never use process streams in test specs */
-  opts.input = opts.input || process.stdin;
-  /* istanbul ignore next: never use process streams in test specs */
-  opts.output = opts.output || process.stdout;
+  opts.input = opts.input;
+  opts.output = opts.output;
 
   var message = opts.message || MSG
     , node = parser.parse(message)
     , stream = generator(node, opts.prepend)
     , serialize = new Serialize();
+
+  if(!opts.input || !opts.output) {
+    return stream; 
+  }
 
   // pass through stream, we append or prepend
   mkast.parser(opts.input, {wrap: true})
