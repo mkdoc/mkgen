@@ -15,27 +15,21 @@ function generator(node, prepend) {
     , open = 0;
 
   function transform(chunk, encoding, cb) {
-    var scope = this;
 
     if(chunk.is(Node.DOCUMENT)) {
       open++; 
     }
 
     if(chunk.is(Node.EOF)) {
-      open--; 
-    }
-
-    function write() {
-      var next = node.firstChild;
-      while(next) {
-        scope.push(next);
-        next = next.next; 
+      if(open) {
+        open--; 
       }
     }
-   
+
     // append to end before last eof node
     if(!sent && !prepend && chunk.is(Node.EOF) && open === 0) {
-      write();
+      this.push(node);
+      this.push(Node.createNode(Node.EOF));
       sent = true;
     }
 
@@ -43,7 +37,8 @@ function generator(node, prepend) {
 
     // prepend to start after first document node
     if(!sent && prepend && chunk.is(Node.DOCUMENT)) {
-      write();
+      this.push(node);
+      this.push(Node.createNode(Node.EOF));
       sent = true;
     }
 
@@ -91,6 +86,7 @@ function gen(opts, cb) {
 
   // pass through stream, we append or prepend
   mkast.parser(opts.input, {wrap: true})
+  //mkast.deserialize(opts.input)
     .pipe(stream)
     .pipe(serialize)
     .pipe(opts.output);
