@@ -48,8 +48,8 @@ Returns an output stream.
 
 #### Options
 
-* `input` Readable=process.stdin input stream.
-* `output` Writable=process.stdout output stream.
+* `input` Readable input stream.
+* `output` Writable output stream.
 * `message` String generator message.
 * `prepend` Boolean prepend message to the stream.
 

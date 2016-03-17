@@ -16,9 +16,9 @@ function generator(node, prepend) {
 
   function transform(chunk, encoding, cb) {
 
-    if(chunk.is(Node.DOCUMENT)) {
+    if(Node.is(chunk, Node.DOCUMENT)) {
       open++; 
-    }else if(chunk.is(Node.EOF)) {
+    }else if(Node.is(chunk, Node.EOF)) {
       open--; 
     }
 
