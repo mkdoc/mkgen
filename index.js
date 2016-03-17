@@ -18,12 +18,8 @@ function generator(node, prepend) {
 
     if(chunk.is(Node.DOCUMENT)) {
       open++; 
-    }
-
-    if(chunk.is(Node.EOF)) {
-      if(open) {
-        open--; 
-      }
+    }else if(chunk.is(Node.EOF)) {
+      open--; 
     }
 
     // append to end before last eof node
@@ -33,6 +29,7 @@ function generator(node, prepend) {
       sent = true;
     }
 
+    // pass through the existing data
     this.push(chunk);
 
     // prepend to start after first document node
@@ -79,14 +76,12 @@ function gen(opts, cb) {
   opts.output = opts.output || process.stdout;
 
   var message = opts.message || MSG
-    , node = parser.parse(message);
-
-  var stream = generator(node, opts.prepend)
+    , node = parser.parse(message)
+    , stream = generator(node, opts.prepend)
     , serialize = new Serialize();
 
   // pass through stream, we append or prepend
   mkast.parser(opts.input, {wrap: true})
-  //mkast.deserialize(opts.input)
     .pipe(stream)
     .pipe(serialize)
     .pipe(opts.output);
