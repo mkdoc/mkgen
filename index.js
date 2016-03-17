@@ -23,17 +23,19 @@ function generator(node, prepend) {
     }
 
     // append to end before last eof node
-    if(!sent && !prepend && chunk.is(Node.EOF) && open === 0) {
+    if(!sent && !prepend && Node.is(chunk, Node.EOF) && open === 0) {
       this.push(node);
       this.push(Node.createNode(Node.EOF));
       sent = true;
     }
 
+    //console.dir(chunk);
+
     // pass through the existing data
     this.push(chunk);
 
     // prepend to start after first document node
-    if(!sent && prepend && chunk.is(Node.DOCUMENT)) {
+    if(!sent && prepend && Node.is(chunk, Node.DOCUMENT)) {
       this.push(node);
       this.push(Node.createNode(Node.EOF));
       sent = true;
