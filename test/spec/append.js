@@ -8,6 +8,12 @@ var expect = require('chai').expect
 
 describe('mkgen:', function() {
 
+  it('should return stream with no options', function(done) {
+    var stream = mkgen();
+    expect(stream).to.be.an('object');
+    done();
+  });
+
   it('should append to stream', function(done) {
     var source = 'test/fixtures/paragraph.md'
       , target = 'target/append.json.log'
