@@ -21,8 +21,11 @@ For the command line interface install [mkdoc][] globally (`npm i -g mkdoc`).
 ## Usage
 
 ```javascript
-var mkgen = require('mkgen');
-mkgen(); // read from process.stdin, write to process.stdout
+var gen = require('mkgen')
+  , commonmark = require('commonmark')
+  , parser = new commonmark.Parser()
+  , stream = gen();
+stream.end(parser.parse('This is a markdown paragraph.'));
 ```
 
 ## API
