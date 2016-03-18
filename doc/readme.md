@@ -12,6 +12,8 @@ When no message is given the default generator message is used.
 
 ## Usage
 
+Create the stream and write a [commonmark][] document:
+
 <? @source {javascript=s/\.\.\/index/mkgen/gm} usage.js ?>
 
 <? @exec mkapi index.js --title=API --level=2 ?>
