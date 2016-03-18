@@ -99,4 +99,10 @@ function gen(opts, cb) {
   return opts.output;
 }
 
+function serialize(opts) {
+  return new Serialize(opts);
+}
+
+gen.serialize = serialize;
+
 module.exports = gen;

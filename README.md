@@ -24,10 +24,14 @@ Create the stream and write a [commonmark][] document:
 
 ```javascript
 var gen = require('mkgen')
-  , commonmark = require('commonmark')
-  , parser = new commonmark.Parser()
+  , ast = require('mkast')
+  , walk = ast.walk()
   , stream = gen();
-stream.end(parser.parse('This is a markdown paragraph.'));
+walk
+  .pipe(stream)
+  .pipe(gen.serialize({indent: 2}))
+  .pipe(process.stdout);
+walk.end(ast.parse('This is a markdown paragraph.'));
 ```
 
 ## API
