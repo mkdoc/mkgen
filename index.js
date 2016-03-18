@@ -29,8 +29,6 @@ function generator(node, prepend) {
       sent = true;
     }
 
-    //console.dir(chunk);
-
     // pass through the existing data
     this.push(chunk);
 
