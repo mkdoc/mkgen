@@ -22,6 +22,8 @@ function generator(node, prepend) {
       open--; 
     }
 
+    //console.error(chunk);
+
     // append to end before last eof node
     if(!sent && !prepend && Node.is(chunk, Node.EOF) && open === 0) {
       this.push(node);
