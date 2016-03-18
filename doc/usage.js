@@ -1,8 +1,6 @@
 var gen = require('../index')
-  , ast = require('mkast')
-  , walk = ast.walk();
-walk
+  , ast = require('mkast');
+ast.src('This is a markdown paragraph.')
   .pipe(gen())
   .pipe(ast.stringify({indent: 2}))
   .pipe(process.stdout);
-walk.end(ast.parse('This is a markdown paragraph.'));
