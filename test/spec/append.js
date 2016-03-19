@@ -3,13 +3,13 @@ var expect = require('chai').expect
   , mkast = require('mkast')
   , Node = mkast.Node
   , parser = new mkast.Parser()
-  , mkgen = require('../../index')
+  , mkmsg = require('../../index')
   , utils = require('../util');
 
-describe('mkgen:', function() {
+describe('mkmsg:', function() {
 
   it('should return stream with no options', function(done) {
-    var stream = mkgen();
+    var stream = mkmsg();
     expect(stream).to.be.an('object');
     done();
   });
@@ -27,7 +27,7 @@ describe('mkgen:', function() {
       , output = fs.createWriteStream(target)
       , opts = {input: input, output: output};
     
-    mkgen(opts);
+    mkmsg(opts);
 
     output.once('finish', function() {
       var result = utils.result(target);

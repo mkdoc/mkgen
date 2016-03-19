@@ -3,10 +3,10 @@ var expect = require('chai').expect
   , mkast = require('mkast')
   , Node = mkast.Node
   , parser = new mkast.Parser()
-  , mkgen = require('../../index')
+  , mkmsg = require('../../index')
   , utils = require('../util');
 
-describe('mkgen:', function() {
+describe('mkmsg:', function() {
 
   it('should append to stream w/ callback', function(done) {
     var source = 'test/fixtures/paragraph.md'
@@ -44,7 +44,7 @@ describe('mkgen:', function() {
       done();
     }
 
-    mkgen(opts, onFinish);
+    mkmsg(opts, onFinish);
   });
 
 });

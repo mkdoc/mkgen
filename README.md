@@ -1,8 +1,8 @@
-# Generator
+# Message
 
-[![Build Status](https://travis-ci.org/mkdoc/mkgen.svg?v=3)](https://travis-ci.org/mkdoc/mkgen)
-[![npm version](http://img.shields.io/npm/v/mkgen.svg?v=3)](https://npmjs.org/package/mkgen)
-[![Coverage Status](https://coveralls.io/repos/mkdoc/mkgen/badge.svg?branch=master&service=github&v=3)](https://coveralls.io/github/mkdoc/mkgen?branch=master)
+[![Build Status](https://travis-ci.org/mkdoc/mkmsg.svg?v=3)](https://travis-ci.org/mkdoc/mkmsg)
+[![npm version](http://img.shields.io/npm/v/mkmsg.svg?v=3)](https://npmjs.org/package/mkmsg)
+[![Coverage Status](https://coveralls.io/repos/mkdoc/mkmsg/badge.svg?branch=master&service=github&v=3)](https://coveralls.io/github/mkdoc/mkmsg?branch=master)
 
 > Append or prepend a message
 
@@ -13,7 +13,7 @@ When no message is given the default generator message is used.
 ## Install
 
 ```
-npm i mkgen --save
+npm i mkmsg --save
 ```
 
 For the command line interface install [mkdoc][] globally (`npm i -g mkdoc`).
@@ -23,7 +23,7 @@ For the command line interface install [mkdoc][] globally (`npm i -g mkdoc`).
 Create the stream and write a [commonmark][] document:
 
 ```javascript
-var gen = require('mkgen')
+var gen = require('mkmsg')
   , ast = require('mkast');
 ast.src('This is a markdown paragraph.')
   .pipe(gen())

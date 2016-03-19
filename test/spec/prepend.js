@@ -3,10 +3,10 @@ var expect = require('chai').expect
   , mkast = require('mkast')
   , Node = mkast.Node
   , parser = new mkast.Parser()
-  , mkgen = require('../../index')
+  , mkmsg = require('../../index')
   , utils = require('../util');
 
-describe('mkgen:', function() {
+describe('mkmsg:', function() {
 
   it('should prepend to stream', function(done) {
     var source = 'test/fixtures/paragraph.md'
@@ -21,7 +21,7 @@ describe('mkgen:', function() {
       , output = fs.createWriteStream(target)
       , opts = {input: input, output: output, prepend: true};
     
-    mkgen(opts);
+    mkmsg(opts);
 
     output.once('finish', function() {
       var result = utils.result(target);

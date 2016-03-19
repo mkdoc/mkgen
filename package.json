@@ -1,15 +1,15 @@
 {
-  "name": "mkgen",
+  "name": "mkmsg",
   "version": "1.1.2",
   "description": "Message injection",
   "author": "muji",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/mkdoc/mkgen.git"
+    "url": "https://github.com/mkdoc/mkmsg.git"
   },
   "bugs": {
-    "url": "https://github.com/mkdoc/mkgen/issues"
+    "url": "https://github.com/mkdoc/mkmsg/issues"
   },
   "keywords": [
     "markdown",
@@ -33,7 +33,7 @@
     "lint": "jshint . && jscs .",
     "clean": "rm -rf coverage",
     "docs": "npm run readme",
-    "readme": "mkcat doc/readme.md | mkpi | mkgen | mkref | mkabs | mkout > README.md",
+    "readme": "mkcat doc/readme.md | mkpi | mkmsg | mkref | mkabs | mkout > README.md",
     "pretest": "rm -rf target && mkdir target",
     "test": "NODE_ENV=test mocha ${SPEC:-test/spec}",
     "precover": "npm run pretest",

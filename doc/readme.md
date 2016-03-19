@@ -1,4 +1,4 @@
-# Generator
+# Message
 
 <? @include readme/badges.md ?>
 
@@ -14,7 +14,7 @@ When no message is given the default generator message is used.
 
 Create the stream and write a [commonmark][] document:
 
-<? @source {javascript=s/\.\.\/index/mkgen/gm} usage.js ?>
+<? @source {javascript=s/\.\.\/index/mkmsg/gm} usage.js ?>
 
 <? @exec mkapi index.js --title=API --level=2 ?>
 <? @include {=readme} license.md links.md ?>
