@@ -23,20 +23,20 @@ For the command line interface install [mkdoc][] globally (`npm i -g mkdoc`).
 Create the stream and write a [commonmark][] document:
 
 ```javascript
-var gen = require('mkmsg')
+var msg = require('mkmsg')
   , ast = require('mkast');
 ast.src('This is a markdown paragraph.')
-  .pipe(gen())
+  .pipe(msg())
   .pipe(ast.stringify({indent: 2}))
   .pipe(process.stdout);
 ```
 
 ## API
 
-### gen
+### msg
 
 ```javascript
-gen([opts][, cb])
+msg([opts][, cb])
 ```
 
 Append or prepend a message string.

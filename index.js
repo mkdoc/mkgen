@@ -11,7 +11,7 @@ var ast = require('mkast')
  *  The document node itself is omitted; it's content nodes are written to 
  *  the stream.
  *
- *  @function gen
+ *  @function msg
  *  @param {Object} [opts] processing options.
  *  @param {Function} [cb] callback function.
  *
@@ -22,7 +22,7 @@ var ast = require('mkast')
  *
  *  @returns an output stream.
  */
-function gen(opts, cb) {
+function msg(opts, cb) {
 
   opts = opts || {};
   opts.input = opts.input;
@@ -51,4 +51,4 @@ function gen(opts, cb) {
   return opts.output;
 }
 
-module.exports = gen;
+module.exports = msg;
