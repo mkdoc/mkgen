@@ -17,7 +17,7 @@ var ast = require('mkast')
  *
  *  @option {Readable} [input] input stream.
  *  @option {Writable} [output] output stream.
- *  @option {String} [message] generator message.
+ *  @option {String} [message] markdown message.
  *  @option {Boolean} [prepend] prepend message to the stream.
  *
  *  @returns an output stream.

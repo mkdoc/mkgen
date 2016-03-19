@@ -56,7 +56,7 @@ Returns an output stream.
 
 * `input` Readable input stream.
 * `output` Writable output stream.
-* `message` String generator message.
+* `message` String markdown message.
 * `prepend` Boolean prepend message to the stream.
 
 ## License
