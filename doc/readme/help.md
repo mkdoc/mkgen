@@ -1,0 +1,3 @@
+## Help
+
+<?@exec {} mkmsg -h ?>

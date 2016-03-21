@@ -31,6 +31,21 @@ ast.src('This is a markdown paragraph.')
   .pipe(process.stdout);
 ```
 
+## Help
+
+```
+mkmsg [options]
+
+Message injection.
+
+  -m, --message=[MSG]  Custom message, parsed as markdown
+  -p, --prepend        Prepend message to the stream
+  -h, --help           Display this help and exit
+  --version            Print the version and exit
+
+Report bugs to https://github.com/mkdoc/mkmsg/issues
+```
+
 ## API
 
 ### msg
