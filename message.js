@@ -16,9 +16,7 @@ function Message(opts) {
  */
 function transform(chunk, encoding, cb) {
 
-  if(Node.is(chunk, Node.DOCUMENT)) {
-    this.open++; 
-  }else if(Node.is(chunk, Node.EOF)) {
+  if(Node.is(chunk, Node.EOF)) {
     this.open--; 
   }
 
@@ -38,6 +36,10 @@ function transform(chunk, encoding, cb) {
     this.push(this.node);
     this.push(Node.createNode(Node.EOF));
     this.sent = true;
+  }
+
+  if(Node.is(chunk, Node.DOCUMENT)) {
+    this.open++; 
   }
 
   cb();
