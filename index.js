@@ -1,5 +1,5 @@
 var ast = require('mkast')
-  , MSG = '---\nCreated by [mkdoc](https://github.com/mkdoc/mkdoc).'
+  , MSG = '---\nCreated by [mkdoc](https://github.com/mkdoc/mkdoc)'
   , Message = require('./message');
 
 /**
@@ -29,7 +29,20 @@ function msg(opts, cb) {
   opts.output = opts.output;
 
   var message = opts.message || MSG
-    , node = ast.parse(message)
+    , d = new Date()
+    , locale = opts.locale || 'en-gb';
+
+  if(!opts.message) {
+    //objDate.toLocaleString(locale, { month: "long" });
+    message += ' on '
+      + d.toLocaleString(locale, {month: 'long'})
+      + ' '
+      + d.toLocaleString(locale, {day: 'numeric'})
+      + ', '
+      + d.toLocaleString(locale, {year: 'numeric'});
+  }
+
+  var node = ast.parse(message)
     , stream = new Message({node: node, prepend: opts.prepend});
 
   if(!opts.input || !opts.output) {
