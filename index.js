@@ -1,5 +1,5 @@
 var ast = require('mkast')
-  , MSG = '---\nCreated by [mkdoc](https://github.com/mkdoc/mkdoc)'
+  , MSG = '---\n_Created by [mkdoc](https://github.com/mkdoc/mkdoc)'
   , Message = require('./message');
 
 /**
@@ -39,7 +39,8 @@ function msg(opts, cb) {
       + ' '
       + d.toLocaleString(locale, {day: 'numeric'})
       + ', '
-      + d.toLocaleString(locale, {year: 'numeric'});
+      + d.toLocaleString(locale, {year: 'numeric'})
+      + '_';
   }
 
   var node = ast.parse(message)
