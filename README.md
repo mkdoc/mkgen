@@ -18,6 +18,18 @@ npm i mkmsg --save
 
 For the command line interface install [mkdoc][] globally (`npm i -g mkdoc`).
 
+---
+
+- [Install](#install)
+- [Usage](#usage)
+- [Help](#help)
+- [API](#api)
+  - [msg](#msg)
+    - [Options](#options)
+- [License](#license)
+
+---
+
 ## Usage
 
 Create the stream and write a [commonmark][] document:
@@ -38,10 +50,10 @@ mkmsg [options]
 
 Message injection.
 
-  -m, --message=[MSG]  Custom message, parsed as markdown
-  -p, --prepend        Prepend message to the stream
-  -h, --help           Display this help and exit
-  --version            Print the version and exit
+  -m, --message=[MSG]     Custom message, parsed as markdown
+  -p, --prepend           Prepend message to the stream
+  -h, --help              Display help and exit
+  --version               Print the version and exit
 
 Report bugs to https://github.com/mkdoc/mkmsg/issues
 ```
@@ -80,7 +92,7 @@ MIT
 
 ---
 
-Created by [mkdoc](https://github.com/mkdoc/mkdoc) on March 26, 2016
+Created by [mkdoc](https://github.com/mkdoc/mkdoc) on April 2, 2016
 
 [mkdoc]: https://github.com/mkdoc/mkdoc
 [mkparse]: https://github.com/mkdoc/mkparse
