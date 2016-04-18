@@ -43,19 +43,40 @@ ast.src('This is a markdown paragraph.')
   .pipe(process.stdout);
 ```
 
+# Example
+
+Append the default generator message:
+
+```shell
+mkcat README.md | mkmsg | mkout
+```
+
+Append a custom message:
+
+```shell
+mkcat README.md | mkmsg -m "Commit: $(git rev-parse HEAD)" | mkout
+```
+
+Prepend a custom message:
+
+```shell
+mkcat README.md | mkmsg -p -m "Commit: $(git rev-parse HEAD)" | mkout
+```
+
 ## Help
 
 ```
-mkmsg [options]
+Usage: mkmsg [options]
 
-Message injection.
+  Message injection.
 
+Options
   -m, --message=[MSG]     Custom message, parsed as markdown
   -p, --prepend           Prepend message to the stream
   -h, --help              Display help and exit
   --version               Print the version and exit
 
-Report bugs to https://github.com/mkdoc/mkmsg/issues
+mkmsg@1.2.5
 ```
 
 ## API
@@ -92,7 +113,7 @@ MIT
 
 ---
 
-Created by [mkdoc](https://github.com/mkdoc/mkdoc) on April 2, 2016
+Created by [mkdoc](https://github.com/mkdoc/mkdoc) on April 18, 2016
 
 [mkdoc]: https://github.com/mkdoc/mkdoc
 [mkparse]: https://github.com/mkdoc/mkparse

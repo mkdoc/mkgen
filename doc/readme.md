@@ -14,13 +14,7 @@ When no message is given the default generator message is used.
 <!-- @toc -->
 ***
 
-## Usage
-
-Create the stream and write a [commonmark][] document:
-
-<? @source {javascript=s/\.\.\/index/mkmsg/gm} usage.js ?>
-
-<? @include {=readme} help.md ?>
+<? @include {=readme} usage.md example.md help.md ?>
 
 <? @exec mkapi index.js --title=API --level=2 ?>
 <? @include {=readme} license.md links.md ?>
