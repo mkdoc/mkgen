@@ -22,6 +22,7 @@ For the command line interface install [mkdoc][] globally (`npm i -g mkdoc`).
 
 - [Install](#install)
 - [Usage](#usage)
+- [Example](#example)
 - [Help](#help)
 - [API](#api)
   - [msg](#msg)
@@ -43,7 +44,7 @@ ast.src('This is a markdown paragraph.')
   .pipe(process.stdout);
 ```
 
-# Example
+## Example
 
 Append the default generator message:
 

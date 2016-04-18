@@ -1,4 +1,4 @@
-# Example
+## Example
 
 Append the default generator message:
 
